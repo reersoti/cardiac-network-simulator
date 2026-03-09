@@ -1,19 +1,39 @@
 # Cardiac Network Simulator
 
-Небольшой Python-проект для моделирования распространения импульса по графу, который можно интерпретировать как упрощённую сеть проводящей системы сердца.
+A Python-based simulator of signal propagation in a graph-based cardiac network with graphical visualization.
 
-## Что умеет
+## Overview
 
-- загружает граф из текстового файла;
-- отображает сеть в `Tkinter`;
-- считает шаги симуляции по нажатию `Space`;
-- позволяет вручную активировать вершины кликом мыши;
-- использует `networkx` для построения layout графа.
+This project models how an excitation signal propagates through a connected network of nodes.  
+The idea is inspired by simplified cardiac conduction and other excitable dynamic systems, where local interactions between connected elements lead to visible global behavior.
 
-## Структура проекта
+The simulator provides a graphical interface that allows the user to observe the network and track how the signal spreads over time.  
+It is designed as an educational project for studying graph-based simulations, propagation logic, and visual representation of dynamic processes.
+
+## Features
+
+- graph-based simulation of signal propagation
+- interactive desktop interface
+- configurable input data
+- node state transitions over time
+- visual representation of network dynamics
+- educational model of excitation propagation
+
+## Simulation Idea
+
+The system consists of nodes connected by edges.  
+Each node may change its state depending on:
+
+- its current condition
+- incoming activity from neighboring nodes
+- propagation rules defined by the model
+
+This makes it possible to simulate simplified pulse transmission across a structured network.
+
+## Project Structure
 
 ```text
-cardiac-network-simulator/
+.
 ├── cardiac_network_simulator/
 │   ├── __init__.py
 │   ├── gui.py
@@ -23,37 +43,12 @@ cardiac-network-simulator/
 │   └── input.txt
 ├── tests/
 │   └── test_model.py
-├── .gitignore
-├── README.md
+├── run.py
 ├── requirements.txt
-└── run.py
+└── README.md
 ```
 
-## Формат входного файла
-
-```text
-<refractory_period>
-<number_of_nodes>
-<neighbors for node 0>
-<neighbors for node 1>
-...
-```
-
-Пример:
-
-```text
-3
-7
-1 6
-0 2
-1 3
-2 4
-3 5
-4 6
-0 5
-```
-
-## Установка
+## Installation
 
 ```bash
 python -m venv .venv
@@ -61,41 +56,49 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Запуск
+## Run
 
 ```bash
 python run.py
 ```
 
-или
+## Input Data
 
-```bash
-python -m cardiac_network_simulator.main
-```
+The simulator reads configuration data from `data/input.txt`.  
+By modifying this file, different graph structures and initial conditions can be tested.
 
-Можно передать свой файл:
+## Educational Value
 
-```bash
-python -m cardiac_network_simulator.main --input data/input.txt
-```
+This project can be useful for:
 
-## Управление
+- studying graph-based dynamic systems
+- understanding propagation processes in networks
+- visualizing state transitions
+- learning how simulation logic can be separated from graphical representation
 
-- `Space` — следующий шаг симуляции
-- клик по вершине — ручная активация нейрона
+## What This Project Demonstrates
 
-## Идея модели
+- Python application structure
+- modeling of dynamic graph processes
+- separation of simulation and GUI layers
+- structured input handling
+- interactive visualization of algorithmic behavior
 
-Каждая вершина хранит:
-- состояние активности;
-- таймер рефрактерности;
-- список соседей.
+## Possible Improvements
 
-На каждом шаге активные вершины распространяют сигнал соседям, затем таймеры обновляются.
+- editable graph creation directly from the GUI
+- richer propagation and recovery rules
+- export of simulation states
+- multiple preset scenarios
+- improved validation of input data
+- stronger automated test coverage
 
-## Что можно улучшить дальше
+## Tech Stack
 
-- добавить цветовую индикацию активных / рефрактерных узлов;
-- вынести параметры симуляции в панель управления;
-- добавить сохранение состояния и сценарии тестирования;
-- покрыть модель более подробными тестами.
+- Python
+- Tkinter
+- graph-based simulation logic
+
+## Notes
+
+This project is a simplified educational simulator and is not intended to be a biologically accurate cardiac model.
