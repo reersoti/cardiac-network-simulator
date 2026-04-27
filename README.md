@@ -1,5 +1,7 @@
 # Cardiac Network Simulator
 
+![Python CI](https://github.com/reersoti/cardiac-network-simulator/actions/workflows/python.yml/badge.svg)
+
 A Python-based simulator of signal propagation in a graph-based cardiac network with graphical visualization.
 
 ## Overview
@@ -56,11 +58,29 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+For Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
 ## Run
 
 ```bash
 python run.py
 ```
+
+## Tests
+
+```bash
+python -m unittest discover -s tests
+```
+
+## Continuous Integration
+
+The repository includes a GitHub Actions workflow that installs dependencies and runs unit tests on every push and pull request to `main`.
 
 ## Input Data
 
@@ -83,6 +103,7 @@ This project can be useful for:
 - separation of simulation and GUI layers
 - structured input handling
 - interactive visualization of algorithmic behavior
+- basic automated testing for the model layer
 
 ## Possible Improvements
 
@@ -97,7 +118,9 @@ This project can be useful for:
 
 - Python
 - Tkinter
-- graph-based simulation logic
+- NetworkX
+- unittest
+- GitHub Actions
 
 ## Notes
 
