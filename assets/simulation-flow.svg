@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360" role="img" aria-labelledby="title desc">
+  <title id="title">Cardiac network simulator flow</title>
+  <desc id="desc">A visual diagram showing graph input, propagation model, node states, and GUI visualization.</desc>
+  <rect width="920" height="360" rx="24" fill="#111827"/>
+  <text x="460" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#f9fafb">Cardiac Network Simulator</text>
+  <text x="460" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9ca3af">graph-based signal propagation, model tests, and GUI visualization</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="60" y="130" width="160" height="92" rx="16" fill="#1f2937" stroke="#60a5fa" stroke-width="2"/>
+    <text x="140" y="162" text-anchor="middle" font-size="18" font-weight="700" fill="#dbeafe">Input Graph</text>
+    <text x="140" y="188" text-anchor="middle" font-size="13" fill="#bfdbfe">data/input.txt</text>
+    <text x="140" y="207" text-anchor="middle" font-size="13" fill="#bfdbfe">nodes + edges</text>
+
+    <rect x="282" y="130" width="170" height="92" rx="16" fill="#1f2937" stroke="#f87171" stroke-width="2"/>
+    <text x="367" y="162" text-anchor="middle" font-size="18" font-weight="700" fill="#fee2e2">Model Layer</text>
+    <text x="367" y="188" text-anchor="middle" font-size="13" fill="#fecaca">propagation rules</text>
+    <text x="367" y="207" text-anchor="middle" font-size="13" fill="#fecaca">refractory period</text>
+
+    <rect x="515" y="130" width="170" height="92" rx="16" fill="#1f2937" stroke="#34d399" stroke-width="2"/>
+    <text x="600" y="162" text-anchor="middle" font-size="18" font-weight="700" fill="#d1fae5">Node States</text>
+    <text x="600" y="188" text-anchor="middle" font-size="13" fill="#bbf7d0">state transitions</text>
+    <text x="600" y="207" text-anchor="middle" font-size="13" fill="#bbf7d0">signal spread</text>
+
+    <rect x="745" y="130" width="120" height="92" rx="16" fill="#1f2937" stroke="#fbbf24" stroke-width="2"/>
+    <text x="805" y="162" text-anchor="middle" font-size="18" font-weight="700" fill="#fef3c7">GUI</text>
+    <text x="805" y="188" text-anchor="middle" font-size="13" fill="#fde68a">Tkinter</text>
+    <text x="805" y="207" text-anchor="middle" font-size="13" fill="#fde68a">network view</text>
+  </g>
+
+  <g stroke="#6b7280" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M220 176 H282"/>
+    <path d="M452 176 H515"/>
+    <path d="M685 176 H745"/>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#6b7280"/>
+    </marker>
+  </defs>
+
+  <g transform="translate(315 255)">
+    <rect width="290" height="50" rx="12" fill="#0f172a" stroke="#4b5563"/>
+    <text x="145" y="31" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#d1d5db">Unit tests validate parsing and model behavior separately from GUI</text>
+  </g>
+</svg>
