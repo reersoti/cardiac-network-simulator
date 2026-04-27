@@ -4,6 +4,10 @@
 
 A Python-based simulator of signal propagation in a graph-based cardiac network with graphical visualization.
 
+<p align="center">
+  <img src="assets/simulation-flow.svg" alt="Cardiac network simulator flow" width="800">
+</p>
+
 ## Overview
 
 This project models how an excitation signal propagates through a connected network of nodes.  
@@ -36,6 +40,8 @@ This makes it possible to simulate simplified pulse transmission across a struct
 
 ```text
 .
+├── assets/
+│   └── simulation-flow.svg
 ├── cardiac_network_simulator/
 │   ├── __init__.py
 │   ├── gui.py
